@@ -1,4 +1,4 @@
-# rem
+# flexible.js
 learn
   
   阿里团队开源的一个库。使用flexible.js轻松搞定各种不同的移动端设备兼容自适应问题。
