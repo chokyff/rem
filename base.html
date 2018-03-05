@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<title>rem布局</title>
+<link rel="stylesheet" href="base.css">
+<script type="text/javascript">
+//引入该flexible.min.js
+!
+function(e, t) {
+    function n() {
+        var n = l.getBoundingClientRect().width;
+        t = t || 540,
+        n > t && (n = t);
+        var i = 100 * n / e;
+        r.innerHTML = "html{font-size:" + i + "px;}"
+    }
+    var i, d = document,
+    o = window,
+    l = d.documentElement,
+    r = document.createElement("style");
+    if (l.firstElementChild) l.firstElementChild.appendChild(r);
+    else {
+        var a = d.createElement("div");
+        a.appendChild(r),
+        d.write(a.innerHTML),
+        a = null
+    }
+    n(),
+    o.addEventListener("resize",
+    function() {
+        clearTimeout(i),
+        i = setTimeout(n, 300)
+    },
+    !1),
+    o.addEventListener("pageshow",
+    function(e) {
+        e.persisted && (clearTimeout(i), i = setTimeout(n, 300))
+    },
+    !1),
+    "complete" === d.readyState ? d.body.style.fontSize = "16px": d.addEventListener("DOMContentLoaded",
+    function(e) {
+        d.body.style.fontSize = "16px"
+    },
+    !1)
+} (640, 640);
+</script>
+
+<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing:border-box;
+	}
+	.container{
+		position: relative;
+		width: 100%;
+		max-width: 640px;
+		min-width: 320px;
+		margin: 0 auto;
+		background-color: #F2294B;
+	}
+	.gd{
+		width: 6.4rem;
+		height: 4rem;
+		background-color: #FE5ACB
+	}
+	.content_box{
+		margin: 0.1rem;
+		width: 6.2rem;
+		height: 2rem;
+		background-color: #fff;
+	}
+	.content_box:last-child{
+		margin-bottom: 1rem;
+	}
+	.footer_nav{
+		width: 6.4rem;
+		height: 1rem;
+		background-color: #8D5FE6;
+	}
+	/*底部导航用flex布局*/
+	.footer_nav .flex{
+		height: 100%;
+		line-height: 1rem;
+		text-align: center;
+		display: flex;
+		display: -webkit-flex;
+		flex-direction: row;
+	}
+	.footer_nav .flex li{
+		flex: 1;
+		height: 100%;
+	}
+	.footer_nav .flex li a{
+		display: block;
+		width: 100%;
+		height: 100%;
+		color: 
+	}
+	.footer_nav .flex li a:hover{
+		/*背景渐变*/
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,green), color-stop(100%,yellow));
+		color: #fff;
+	}
+</style>
+</head>
+
+<body>
+	<!-- 正文 -->
+	<div class="container">
+		<div class="gd">
+			头部广告
+		</div>
+		<div class="content_box">
+			内容盒子
+		</div>
+		<div class="content_box">
+			内容盒子
+		</div>
+		<div class="content_box">
+			内容盒子
+		</div>
+		<div class="content_box">
+			内容盒子
+		</div>
+		<div class="content_box">
+			内容盒子
+		</div>
+		<div class="footer_nav">
+			<ul class="flex">
+				<li><a href="">导航</a></li>
+				<li><a href="">导航</a></li>
+				<li><a href="">导航</a></li>
+				<li><a href="">导航</a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
